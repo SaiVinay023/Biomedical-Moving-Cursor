@@ -1,0 +1,51 @@
+CC     = "C:\Program Files\MATLAB\R2019b\sys\lcc64\lcc64\bin\lcc64.exe"
+LD     = "C:\Program Files\MATLAB\R2019b\sys\lcc64\lcc64\bin\lcclnk64.exe"
+LIBCMD = "C:\Program Files\MATLAB\R2019b\sys\lcc64\lcc64\bin\lcclib64.exe"
+CFLAGS = -dll -noregistrylookup  -c -Zp8 -DLCC_WIN64 -DMATLAB_MEX_FILE -nodeclspec  
+LDFLAGS = -s -dll -L"C:\Program Files\MATLAB\R2019b\sys\lcc64\lcc64\lib64" -entry LibMain -map sfun.map 
+LIBFLAGS = 
+
+OBJECTS = \
+	"c_mexapi_version.obj"\
+	"lccstub.obj"\
+	"Medical3_cgxe.obj"\
+	"m_M840gKcpSYaimk92VkNFZD.obj"\
+	"m_vvvSErOHZga7mqpIKwA4cF.obj"\
+	"m_E2HGlAwvpVWsN6Gi4DeuAD.obj"\
+	"m_fwk72YF0RlyFfLPfJ6qj3E.obj"\
+	"Medical3_cgxe_registry.obj"\
+	"Medical3_cgxe.def"\
+	"C:\Program Files\MATLAB\R2019b\extern\lib\win64\microsoft\libmx.lib"\
+	"C:\Program Files\MATLAB\R2019b\extern\lib\win64\microsoft\libmex.lib"\
+	"C:\Program Files\MATLAB\R2019b\extern\lib\win64\microsoft\libmat.lib"\
+	"C:\Program Files\MATLAB\R2019b\extern\lib\win64\microsoft\libfixedpoint.lib"\
+	"C:\Program Files\MATLAB\R2019b\extern\lib\win64\microsoft\libut.lib"\
+	"C:\Program Files\MATLAB\R2019b\extern\lib\win64\microsoft\libmwmathutil.lib"\
+	"C:\Program Files\MATLAB\R2019b\extern\lib\win64\microsoft\libemlrt.lib"\
+	"C:\Program Files\MATLAB\R2019b\extern\lib\win64\microsoft\libmwcgxert.lib"\
+	"C:\Program Files\MATLAB\R2019b\extern\lib\win64\microsoft\libmwslexec_simbridge.lib"\
+	"C:\Program Files\MATLAB\R2019b\lib\win64\libmwipp.lib"\
+	"C:\Program Files\MATLAB\R2019b\extern\lib\win64\microsoft\libcovrt.lib"\
+	"C:\Program Files\MATLAB\R2019b\extern\lib\win64\microsoft\libmwsl_sfcn_cov_bridge.lib"\
+
+INCLUDE_PATH= -I"C:\Program Files\MATLAB\R2019b\extern\include"  -I"C:\Program Files\MATLAB\R2019b\simulink\include"  -I"C:\Program Files\MATLAB\R2019b\rtw\c\src"  -I"C:\Users\suris\OneDrive\Desktop\biomedicalgroup 7\slprj\_cgxe\Medical3\src"  -I"C:\Users\suris\OneDrive\Desktop\biomedicalgroup 7"  -I"C:\Users\suris\OneDrive\Desktop\BiomedicalGroup 7\slprj\_cprj"  -I"C:\Program Files\MATLAB\R2019b\sys\lcc64\lcc64\include64"  -I"C:\Users\suris\OneDrive\Desktop\BiomedicalGroup 7\slprj\_cgxe\Medical3\src"  -I"C:\Users\suris\OneDrive\Desktop\BiomedicalGroup 7" 
+ 
+
+Medical3_cgxe.mexw64 : $(MAKEFILE) $(OBJECTS)
+	$(LD) $(LDFLAGS) -o Medical3_cgxe.mexw64 @Medical3_cgxe.lmko
+c_mexapi_version.obj :	"C:\Program Files\MATLAB\R2019b\extern\version\c_mexapi_version.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "C:\Program Files\MATLAB\R2019b\extern\version\c_mexapi_version.c"
+lccstub.obj :	"C:\Program Files\MATLAB\R2019b\sys\lcc64\lcc64\mex\lccstub.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "C:\Program Files\MATLAB\R2019b\sys\lcc64\lcc64\mex\lccstub.c"
+Medical3_cgxe.obj :	"Medical3_cgxe.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "Medical3_cgxe.c"
+m_M840gKcpSYaimk92VkNFZD.obj :	"m_M840gKcpSYaimk92VkNFZD.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "m_M840gKcpSYaimk92VkNFZD.c"
+m_vvvSErOHZga7mqpIKwA4cF.obj :	"m_vvvSErOHZga7mqpIKwA4cF.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "m_vvvSErOHZga7mqpIKwA4cF.c"
+m_E2HGlAwvpVWsN6Gi4DeuAD.obj :	"m_E2HGlAwvpVWsN6Gi4DeuAD.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "m_E2HGlAwvpVWsN6Gi4DeuAD.c"
+m_fwk72YF0RlyFfLPfJ6qj3E.obj :	"m_fwk72YF0RlyFfLPfJ6qj3E.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "m_fwk72YF0RlyFfLPfJ6qj3E.c"
+Medical3_cgxe_registry.obj :	"Medical3_cgxe_registry.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "Medical3_cgxe_registry.c"
